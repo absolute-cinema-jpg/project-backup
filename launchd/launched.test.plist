@@ -3,14 +3,21 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>launched.test</string>
+    <string>launched.proj-backup</string>
     <key>ProgramArguments</key>
     <array>
       <string>sh</string>
       <string>-c</string>
-      <string>$HOME/github/edit-scripts/test.sh</string>
+      <string>$HOME/github/project-backup/test.sh</string>
     </array>
-    <key>StartInterval</key>
-    <integer>10</integer>
+    <key>StartCalendarInterval</key>
+    <array>
+      <dict>
+        <key>Hour</key>
+        <integer>19</integer>
+        <key>Minute</key>
+        <integer>08</integer>
+      </dict>
+    </array>
   </dict>
 </plist>
