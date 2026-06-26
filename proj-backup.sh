@@ -1,24 +1,10 @@
 #!/bin/zsh
 
-project_location="/Volumes/IS_Nexis/IN_STARLAND"
-backup_location="/Users/ff_tc_25006/Documents/Backup/"
+projPath=/Volumes/TBDS_PROJ_200082/BDS_LA
+backupPath="/Users/salon08074/Documents/TBDS-backups"
+projName=$(basename $projPath)
 
-project_folder_name=$(basename $project_location)
-
-osascript -e 'display notification "Backup started" with title "Backup Job" sound name "Funk"'
-
-#Copy the whole folder to backup location (ideally Documents)
-cp -R $project_location $backup_location
-
-osascript -e 'display notification "Zipping backup" with title "Backup Job" sound name "Frog"'
-
-#Archive the freshly copied folder
-zip -r $backup_location/$(date +%y%m%d)_$project_folder_name.zip $backup_location/$project_folder_name
-
-#Ensure trash dir exists
-mkdir -p $backup_location/trash
-
-#Move the source folder into trash with a unique timestamp
-mv $backup_location/$project_folder_name $backup_location/trash/$(date +%y%m%d)_$project_folder_name
-
-osascript -e 'display notification "Backup finished successfully!" with title "Backup Job" sound name "Glass"'
+cd $projPath
+zip -r "$backupPath/$(date +%y%m%d)_$projName.zip" ./*
+say "Backup is done. Hell yeah" &
+osascript -e 'display notification "Backup Complete!" with title "proj-backup.sh"'
