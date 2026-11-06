@@ -5,10 +5,12 @@
     <key>Label</key>
     <string>launched.test_timer</string>
 
-    <!-- Use the absolute path to the script; no need for sh -c -->
+    <!-- launchd doesn't expand $HOME itself, so go through sh -c -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/ff_tc_25006/github/project-backup/testNew.sh</string>
+        <string>sh</string>
+        <string>-c</string>
+        <string>$HOME/github/project-backup/testNew.sh</string>
     </array>
 
     <!-- Run every 20 seconds (or whatever you need) -->
@@ -21,8 +23,8 @@
 
     <!-- Capture launchd’s own stdout/stderr (useful for debugging) -->
     <key>StandardOutPath</key>
-    <string>/Users/ff_tc_25006/Library/Logs/launched.test_timer.out.log</string>
+    <string>/tmp/launched.test_timer.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/ff_tc_25006/Library/Logs/launched.test_timer.err.log</string>
+    <string>/tmp/launched.test_timer.err.log</string>
 </dict>
 </plist>

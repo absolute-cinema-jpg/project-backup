@@ -1,0 +1,7 @@
+# Copy to ~/.config/project-backup/config and edit the copy. proj-backup.sh sources it.
+
+# The project folder to back up
+projPath="/Volumes/YOUR_VOLUME/YOUR_PROJECT"
+
+# Where the dated zips go. This folder must already exist.
+backupPath="$HOME/Documents/YOUR_BACKUP_FOLDER"

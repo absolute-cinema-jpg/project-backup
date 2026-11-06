@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-project_location=/Volumes/IS_Nexis/IN_STARLAND
-backup_location=/Users/ff_tc_25006/Documents/Backup
-project_folder_name=IN_STARLAND
+project_location=/Volumes/YOUR_VOLUME/YOUR_PROJECT
+backup_location="$HOME/Documents/Backup"
+project_folder_name=YOUR_PROJECT
 
 #Copy the whole folder to backup location (ideally Documents)
 rsync -avPh $project_location $backup_location
